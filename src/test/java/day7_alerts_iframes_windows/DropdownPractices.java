@@ -1,5 +1,6 @@
 package day7_alerts_iframes_windows;
 
+import org.junit.BeforeClass;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
