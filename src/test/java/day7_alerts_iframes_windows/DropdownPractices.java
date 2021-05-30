@@ -7,7 +7,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 import utilities.WebDriverFactory;
 
@@ -81,7 +80,6 @@ public class DropdownPractices {
         stateDropdown.selectByIndex(5);
         //stateDropdown.selectByVisibleText("California");
 
-
         //6. Verify final selected option is California.
         //Use all Select options. (visible text, value, index)
 
@@ -121,7 +119,6 @@ public class DropdownPractices {
         String expectedYear = "1922";
         String expectedMonth = "December";
         String expectedDay = "1";
-
 
         //getting our actual values from browser
         String actualYear = yearDropdown.getFirstSelectedOption().getText();
@@ -196,7 +193,6 @@ public class DropdownPractices {
         String actualTitle = driver.getTitle();
 
         Assert.assertEquals(actualTitle, expectedTitle, "Title is not as expected!!!");
-
     }
     @AfterClass
     public void teardownClass() throws InterruptedException {
