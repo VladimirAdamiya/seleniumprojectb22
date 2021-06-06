@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
-import utilities.WebDriverFactory;
+//import utilities.WebDriverFactory;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -24,7 +24,7 @@ public class DropdownPractices {
      */
     @BeforeClass
     public void setupClass(){
-        driver = WebDriverFactory.getDriver("chrome");
+        //driver = WebDriverFactory.getDriver("chrome");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
         driver.get("http://practice.cybertekschool.com/dropdown");
