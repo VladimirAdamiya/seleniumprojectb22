@@ -34,6 +34,10 @@ public class Table_Tasks {
 
     @Test
     public void task3_return_tims_due_amount(){
+        }
+
+    @Test
+            public void task4_verify_order_method() {
 
         ////table[@id='table1']//td[.='Tim'] --> this locator locates Tim's cell regardless
         // of which row he is in
