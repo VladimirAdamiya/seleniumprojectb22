@@ -1,44 +1,20 @@
 package day10_webtable_properties_practice;
 
+import base.TestBase;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import utilities.ConfigurationReader;
-import utilities.WebDriverFactory;
 
-import java.util.concurrent.TimeUnit;
-
-public class Table_Tasks {
-    WebDriver driver;
-
-    @BeforeMethod
-    public void setupMethod(){
-
-        String browser = ConfigurationReader.getProperty("browser");
-        //This line returns String : chrome
-
-        String url = ConfigurationReader.getProperty("dataTablesUrl");
-        //This line returns String : http://practice.cybertekschool.com/tables#edit
-
-        driver = WebDriverFactory.getDriver(browser);
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-        driver.get(url);
-        // below code is same as above
-        //driver.get(ConfigurationReader.getProperty("dataTablesUrl"));
-
-    }
+public class Table_Tasks extends TestBase {
 
     @Test
     public void task3_return_tims_due_amount(){
-        }
-
-    @Test
-            public void task4_verify_order_method() {
-
+        // below code is same as above
+        //driver.get(ConfigurationReader.getProperty("dataTablesUrl"));
+        String url = ConfigurationReader.getProperty("dataTablesUrl");
+        driver.get(url);
         ////table[@id='table1']//td[.='Tim'] --> this locator locates Tim's cell regardless
         // of which row he is in
 
@@ -56,8 +32,25 @@ public class Table_Tasks {
 
         Assert.assertEquals(actualTimResult, expectedTimResult, "Tim's cell is not returning as expected.");
 
-
-
         //Note: Create locator for Tim that will be dynamic and doesn’t care in which row Tim is.
     }
+
+    @Test
+    public void task4_verify_order_method(){
+        String url = ConfigurationReader.getProperty("dataTablesUrl");
+        driver.get(url);
+
+        TableUtils.verifyOrder(driver, "Tim");
+
+    }
+
+    @Test
+    public void task5_print_all_names_and_emails(){
+        String url = ConfigurationReader.getProperty("dataTablesUrl");
+        driver.get(url);
+
+        TableUtils.printNamesAndEmails(driver);
+
+    }
+
 }

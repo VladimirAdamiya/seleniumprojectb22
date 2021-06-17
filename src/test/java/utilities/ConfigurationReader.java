@@ -1,24 +1,22 @@
 package utilities;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 
+/*
+We will create a re-usable method that will be reading from configuration.reader file
+ */
+
 public class ConfigurationReader {
 
-    /*
-    We will create a re-usable method that will be reading from configuration.reader file
-     */
-
-    // #1- Create properties object
-    private  static  Properties properties = new Properties();
+    //#1- Create properties object
+    private static Properties properties = new Properties();
 
     static {
 
-        // #2- Load the file into FileInputString
-
         try {
+            //#2- Load the file into FileInputStream
             FileInputStream file = new FileInputStream("configuration.properties");
 
             //#3- load properties object with the file (configuration.properties)
@@ -34,6 +32,7 @@ public class ConfigurationReader {
     }
     //USE THE ABOVE CREATED LOGIC TO CREATE A RE-USABLE STATIC METHOD
     public static String getProperty(String keyWord){
-        return properties.getProperty("keyWord");
+
+        return properties.getProperty(keyWord);
     }
 }
