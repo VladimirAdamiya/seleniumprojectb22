@@ -58,4 +58,14 @@ public class Driver {
          */
         return driver;
     }
+
+    /*
+    This method makes sure we have some form of session or driver id has.
+     Either null or not null it must exist.
+     */
+    public static void closeDriver() {
+        if(driver!=null){
+            driver.quit();
+        }
+    }
 }
